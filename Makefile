@@ -1,14 +1,14 @@
 CC=gcc
 
-all: beraShell
+all: myshell
 
-beraShell: myshell.c islem
-	$(CC) -lreadline -o beraShell myshell.c
+myshell: myshell.c islem tekrar
+	$(CC) -o myshell myshell.c -lreadline
 
 islem : islem.c topla cikar
 	$(CC) -o islem  islem.c
 
-tekrar.o: tekrar.c 
+tekrar: tekrar.c 
 	$(CC) -o tekrar tekrar.c
 
 topla : topla.c 
@@ -18,4 +18,4 @@ cikar : cikar.c
 	$(CC) -o cikar cikar.c
 
 clean:
-	rm myshell.o	topla.o	cikar.o	islem.o
+	rm beraShell	islem	tekrar	topla	cikar myShell
